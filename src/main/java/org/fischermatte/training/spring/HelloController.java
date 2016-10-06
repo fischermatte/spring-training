@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class  HelloController {
     @RequestMapping(path = "/hello", method = RequestMethod.GET)
     @ResponseBody
     public String getHello() {
