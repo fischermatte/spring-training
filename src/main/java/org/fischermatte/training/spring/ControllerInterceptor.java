@@ -22,7 +22,7 @@ public class ControllerInterceptor {
         return proceedingJoinPoint.proceed();
     }
 
-    @Around("@target(org.springframework.web.bind.annotation.RestController) && execution(public * *(..))")
+    @Around("@target(org.springframework.web.bind.annotation.RestController) && execution(* org.fischermatte.training.spring.HelloController.getHello())")
     public Object aroundWithAnnotation(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("Around with annotation");
         return proceedingJoinPoint.proceed();
