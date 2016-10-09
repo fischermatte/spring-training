@@ -1,4 +1,4 @@
-package org.fischermatte.training.spring;
+package org.fischermatte.training.spring.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -11,18 +11,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class ControllerInterceptor {
 
-    @AfterReturning(pointcut = "execution(* org.fischermatte.training.spring.HelloController.getHello())")
+    @AfterReturning(pointcut = "execution(* org.fischermatte.training.spring.mvc.HelloController.getHello())")
     public void after(JoinPoint joinPoint) throws Throwable {
         System.out.println("After Returning");
     }
 
-    @Around("execution(* org.fischermatte.training.spring.HelloController.getHello())")
+    @Around("execution(* org.fischermatte.training.spring.mvc.HelloController.getHello())")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("Around");
         return proceedingJoinPoint.proceed();
     }
 
-    @Around("@target(org.springframework.web.bind.annotation.RestController) && execution(* org.fischermatte.training.spring.HelloController.getHello())")
+    @Around("@target(org.springframework.web.bind.annotation.RestController) && execution(* org.fischermatte.training.spring.mvc.HelloController.getHello())")
     public Object aroundWithAnnotation(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("Around with annotation");
         return proceedingJoinPoint.proceed();

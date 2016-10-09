@@ -1,23 +1,21 @@
-package org.fischermatte.training.spring;
+package org.fischermatte.training.spring.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
-@Component
-public class Storage {
+@Service
+public class JdbcService {
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public Storage(JdbcTemplate jdbcTemplate) {
+    public JdbcService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @PostConstruct
-    private void onPostConstruct() {
+    public void doSomeJdbc() {
         jdbcTemplate.execute("create table employee (id int, name varchar)");
         jdbcTemplate.execute("insert into employee (id, name) values (1, 'A')");
         jdbcTemplate.execute("insert into employee (id, name) values (2, 'B')");
