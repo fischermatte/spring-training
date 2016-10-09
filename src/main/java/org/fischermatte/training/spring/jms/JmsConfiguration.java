@@ -1,14 +1,13 @@
 package org.fischermatte.training.spring.jms;
 
-import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.core.JmsMessagingTemplate;
+import org.springframework.jms.core.JmsTemplate;
 
 import javax.jms.Queue;
-import java.util.Arrays;
 
 @Configuration
 @EnableJms
@@ -22,8 +21,8 @@ public class JmsConfiguration {
     }
 
     @Bean
-    public JmsProducer jmsProducer(JmsMessagingTemplate jmsMessagingTemplate, Queue textQueue, Queue emailQueue) {
-        return new JmsProducer(jmsMessagingTemplate, textQueue, emailQueue);
+    public JmsProducer jmsProducer(JmsMessagingTemplate jmsMessagingTemplate, JmsTemplate jmsTemplate, Queue textQueue, Queue emailQueue) {
+        return new JmsProducer(jmsMessagingTemplate, jmsTemplate, textQueue, emailQueue);
     }
 
     @Bean
