@@ -23,8 +23,7 @@ public class SpringTrainingApplication {
         application.doSomeStuff();
 
         // get the factory bean of jmsProducer
-        WelcomeText welcomeTextMrMueller = context.getBean("welcomeTextMrMueller", WelcomeText.class);
-        WelcomeText welcomeTextMrBrecht = context.getBean("welcomeTextMrBrecht", WelcomeText.class);
+        WelcomeText welcomeText = context.getBean(WelcomeText.class);
     }
 
     public void doSomeStuff() {

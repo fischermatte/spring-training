@@ -1,7 +1,9 @@
 package org.fischermatte.training.spring.factorybean;
 
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.stereotype.Component;
 
+@Component
 public class WelcomeTextFactoryBean implements FactoryBean<WelcomeText> {
 
     private String name = "Mustermann";
