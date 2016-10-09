@@ -1,5 +1,6 @@
 package org.fischermatte.training.spring;
 
+import org.fischermatte.training.spring.mvc.RestClient;
 import org.fischermatte.training.spring.factorybean.WelcomeText;
 import org.fischermatte.training.spring.jdbc.JdbcService;
 import org.fischermatte.training.spring.jms.JmsProducer;
@@ -16,6 +17,8 @@ public class SpringTrainingApplication {
 
     @Autowired
     private JmsProducer jmsProducer;
+    @Autowired
+    private RestClient restClient;
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringTrainingApplication.class, args);
@@ -29,5 +32,6 @@ public class SpringTrainingApplication {
     public void doSomeStuff() {
         jdbcService.doSomeJdbc();
         jmsProducer.doSomeJms();
+        restClient.doSomeRest();
     }
 }

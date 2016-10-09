@@ -1,16 +1,13 @@
 package org.fischermatte.training.spring.mvc;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class  HelloController {
+public class HelloController {
     @RequestMapping(path = "/hello", method = RequestMethod.GET)
     @ResponseBody
-    public String getHello() {
-        System.out.println("say hello....");
+    public String getHello(@RequestParam(required = false, name = "name") String name) {
+        System.out.println("hello mr. " + name);
         return "hello";
     }
 }
