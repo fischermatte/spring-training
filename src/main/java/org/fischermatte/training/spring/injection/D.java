@@ -9,12 +9,12 @@ public class D {
     private A a;
     private B b;
 
-    @Autowired (required = true)
+    @Autowired (required = false)
     public D(A a) {
         this.a = a;
     }
 
-    @Autowired (required = true)
+    @Autowired (required = false)
     public D(B b, C c) {
         this.b = b;
     }
