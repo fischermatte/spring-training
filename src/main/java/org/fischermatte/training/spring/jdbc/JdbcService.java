@@ -2,6 +2,7 @@ package org.fischermatte.training.spring.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
@@ -9,6 +10,8 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -47,7 +50,18 @@ public class JdbcService {
 
 
         // row mapper
-        List<String> names = jdbcTemplate.query("SELECT * FROM employee", (resultSet, i) -> resultSet.getString("name"));
+        List<String> names = jdbcTemplate.query("SELECT * FROM employee", new RowMapper<String>() {
+            @Override
+            public String mapRow(ResultSet resultSet, int i) throws SQLException {
+                return resultSet.getString("name");
+            }
+        });
+        String firstPerson = jdbcTemplate.queryForObject("SELECT * FROM employee WHERE id = 1", new RowMapper<String>() {
+            @Override
+            public String mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+                return resultSet.getString("name");
+            }
+        });
         // row callback handler
         jdbcTemplate.query("SELECT * FROM employee", resultSet -> {
             System.out.println("huhu name " + resultSet.getString("name"));
