@@ -12,14 +12,14 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-public class HelloControllerTest {
+public class HelloRestControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
     public void getHello() throws Exception {
-        String response = restTemplate.getForObject("/hello",String.class);
+        String response = restTemplate.getForObject("/api/hello",String.class);
         assertThat(response).isEqualTo("hello");
     }
 

@@ -11,7 +11,7 @@ import javax.jms.Queue;
 
 @Configuration
 @EnableJms
-public class JmsConfiguration {
+public class JmsConfig {
     static final String TEXT_QUEUE_DESTINATION = "text-destination";
     static final String EMAIL_QUEUE_DESTINATION = "email-destination";
 

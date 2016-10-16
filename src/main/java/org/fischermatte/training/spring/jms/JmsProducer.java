@@ -8,7 +8,7 @@ import javax.jms.MessageProducer;
 import javax.jms.ObjectMessage;
 import javax.jms.Queue;
 
-import static org.fischermatte.training.spring.jms.JmsConfiguration.EMAIL_QUEUE_DESTINATION;
+import static org.fischermatte.training.spring.jms.JmsConfig.EMAIL_QUEUE_DESTINATION;
 
 public class JmsProducer {
 

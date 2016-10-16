@@ -23,7 +23,7 @@ public class SpringTrainingApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringTrainingApplication.class, args);
         SpringTrainingApplication application = context.getBean(SpringTrainingApplication.class);
-        application.doSomeStuff();
+        // application.doSomeStuff();
 
         // get the factory bean of jmsProducer
         WelcomeText welcomeText = context.getBean(WelcomeText.class);

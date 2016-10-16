@@ -14,8 +14,8 @@ public class RestClient {
 
     public void doSomeRest() {
         String baseUrl = "http://localhost:" + port;
-        restTemplate.getForObject(baseUrl +  "/hello",String.class);
-        restTemplate.getForObject(baseUrl + "/hello?name=Hase",String.class);
-        restTemplate.getForObject(baseUrl + "/hello?name=Maus",String.class);
+        restTemplate.getForObject(baseUrl +  "/api/hello",String.class);
+        restTemplate.getForObject(baseUrl + "/api/hello?name=Hase",String.class);
+        restTemplate.getForObject(baseUrl + "/api/hello?name=Maus",String.class);
     }
 }

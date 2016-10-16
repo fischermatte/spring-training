@@ -7,7 +7,7 @@ import org.springframework.jms.listener.adapter.MessageListenerAdapter;
 
 import javax.jms.ConnectionFactory;
 
-import static org.fischermatte.training.spring.jms.JmsConfiguration.TEXT_QUEUE_DESTINATION;
+import static org.fischermatte.training.spring.jms.JmsConfig.TEXT_QUEUE_DESTINATION;
 
 @Configuration
 public class JmsConsumerWithAdapter {
