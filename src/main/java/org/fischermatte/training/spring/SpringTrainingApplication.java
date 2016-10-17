@@ -1,9 +1,9 @@
 package org.fischermatte.training.spring;
 
-import org.fischermatte.training.spring.mvc.RestClient;
 import org.fischermatte.training.spring.factorybean.WelcomeText;
 import org.fischermatte.training.spring.jdbc.JdbcService;
 import org.fischermatte.training.spring.jms.JmsProducer;
+import org.fischermatte.training.spring.mvc.RestClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
