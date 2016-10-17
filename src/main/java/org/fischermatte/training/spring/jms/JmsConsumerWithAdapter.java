@@ -12,7 +12,6 @@ import static org.fischermatte.training.spring.jms.JmsConfig.TEXT_QUEUE_DESTINAT
 @Configuration
 public class JmsConsumerWithAdapter {
 
-
     @Bean
     public MessageListenerAdapter messageListenerAdapter() {
         MessageListenerAdapter messageListenerAdapter = new MessageListenerAdapter();

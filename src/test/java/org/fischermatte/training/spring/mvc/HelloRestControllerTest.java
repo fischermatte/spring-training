@@ -1,4 +1,4 @@
-package org.fischermatte.training.spring;
+package org.fischermatte.training.spring.mvc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
