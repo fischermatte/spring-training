@@ -1,9 +1,8 @@
 package org.fischermatte.training.spring;
 
-import org.fischermatte.training.spring.factorybean.WelcomeText;
 import org.fischermatte.training.spring.jdbc.JdbcService;
 import org.fischermatte.training.spring.jms.JmsProducer;
-import org.fischermatte.training.spring.mvc.RestClient;
+import org.fischermatte.training.spring.mvc.rest.RestClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +25,7 @@ public class SpringTrainingApplication {
         // application.doSomeStuff();
 
         // get the factory bean of jmsProducer
-        WelcomeText welcomeText = context.getBean(WelcomeText.class);
+        // WelcomeText welcomeText = context.getBean(WelcomeText.class);
     }
 
     public void doSomeStuff() {

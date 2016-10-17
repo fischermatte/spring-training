@@ -9,12 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class MvcConfig {
 
     @Bean
-    public WebMvcConfigurerAdapter forwardToIndex() {
+    public WebMvcConfigurerAdapter webMvcConfigurerAdapter() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
-                registry.addViewController("/").setViewName("forward:/index.html");
-                registry.addViewController("/login").setViewName("forward:/login.html");
+                registry.addViewController("/").setViewName("index");
             }
         };
     }

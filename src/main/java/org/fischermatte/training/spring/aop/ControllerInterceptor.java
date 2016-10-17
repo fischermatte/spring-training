@@ -3,14 +3,14 @@ package org.fischermatte.training.spring.aop;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.fischermatte.training.spring.mvc.HelloRestController;
+import org.fischermatte.training.spring.mvc.rest.HelloRestController;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
 public class ControllerInterceptor {
 
-    @Pointcut("execution(* org.fischermatte.training.spring.mvc.HelloRestController.getHello(java.lang.String))")
+    @Pointcut("execution(* org.fischermatte.training.spring.mvc.rest.HelloRestController.getHello(java.lang.String))")
     private void helloController(){
         // pointcut
     }
