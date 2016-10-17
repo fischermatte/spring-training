@@ -14,8 +14,23 @@ public class MvcConfig {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("index");
+                registry.addViewController("/index.html").setViewName("index");
+                registry.addViewController("/login.html").setViewName("login");
             }
         };
     }
 
+//    @Bean
+//    public UrlFilenameViewController urlViewController() {
+//        return new UrlFilenameViewController();
+//    }
+//
+//    @Bean
+//    public SimpleUrlHandlerMapping getUrlHandlerMapping() {
+//        SimpleUrlHandlerMapping handlerMapping = new SimpleUrlHandlerMapping();
+//        Properties mappings = new Properties();
+//        mappings.put("/**/*.html", "urlViewController");
+//        handlerMapping.setMappings(mappings);
+//        return handlerMapping;
+//    }
 }
